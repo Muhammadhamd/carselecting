@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select your car</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: #f7f9fa;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+    
+    .container{
+        max-width: 700px;
+        width: 100%;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgb(216 216 218);
+    display: flex;
+    min-height: 300px;
+    padding: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px;
+    }
+
+    .container .list-div{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        min-width: 69.18px;
+    }
+    .container .list-div button{
+        background: none;
+    border: 3px solid darkorange;
+    padding: 3px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    }
+    .container .list-div button:hover{
+        background-color: darkorange;
+        color: white;
+    }
+
+    .container .car-img-div{
+        width: 100%;
+    max-width: 400px;
+    min-width: 400px;
+    text-align: center;
+    }
+    .container .car-img-div img{
+        width: 65%;
+        max-width: 260px;
+    }
+    .container .about-div{
+        font-family:sans-serif;
+        height: 230px;
+        width: 150px;
+    }
+    .container .about-div .heading-div{
+
+    }
+    .container .about-div .heading-div h1{
+        font-weight: 900;
+        
+    }
+    .container .about-div .bio-div{
+        margin: 28px 0 0 0;
+    }
+    .container .about-div .bio-div h3{
+        margin: 14px 0 0 0;
+    }
+    .container .about-div .bio-div div{
+
+        background-color: white;
+        width: 150px;
+        height: 4px;
+        margin: 7px 0;
+    }
+    .container .about-div .bio-div div div{
+        width: 100%;
+        background-color: orange;
+        transition: .5s ease;
+    }
+    /* .selected-option{
+        background-color: orange;
+        color: white;
+    } */
+
+    @media screen and (max-width:699px) {
+            .container .about-div{
+                display: flex;
+                width: 100%;
+                flex-wrap: wrap;
+            }
+            .container .about-div .bio-div {
+                margin: 0;
+            }
+
+            .container .about-div .heading-div{
+                min-width: 50%;
+            }
+            .container .car-img-div {
+                max-width: none;
+                min-width: 0;
+                height: 250px;
+                justify-content: center;
+    display: flex;
+    align-items: center;
+            }
+
+            .container .list-div{
+                flex-direction: row;
+                width: 100%;
+                max-width: none;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+    }
+    @media screen and (max-width:380px) {
+        .container .car-img-div img{
+            width: 100%;
+        }
+
+    }
+</style> 
+<body>
+    <div class="container">
+        <div class="list-div">
+            <button id="car-1" >car 1</button>
+            <button id="car-2" >car 2</button>
+            <button id="car-3" >car 3</button>
+            <button id="car-4" >car 4</button>
+            <button id="car-5" >car 5</button>
+        </div>
+        <div class="car-img-div">
+            <img id="car-img" src="" alt="">
+        </div>
+        <div class="about-div">
+           <div class="heading-div">
+            <h1 id="selected-car-name">honda 1</h1>
+           </div>
+            <div class="bio-div">
+                <h3>speed</h3>
+            <div class="speed"><div></div></div>
+            <h3>petrol capacity</h3>
+            <div class="petrol-cap"><div></div></div>
+            <h3>power</h3>
+            <div class="power"><div></div></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let buttons = document.querySelectorAll(".container .list-div button"),
+             imgURl = document.getElementById("car-img"),
+             carName = document.getElementById("selected-car-name"),
+             speed = document.querySelector(".speed div"),
+             petrolCapacity = document.querySelector(".petrol-cap div"),
+             power = document.querySelector(".power div");
+
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click",
+            function (e){
+                   let target =  e.target;
+                    target.style= "background:orange; color:white;";
+                   
+            });
+            buttons[i].style = "";
+            buttons[0].addEventListener("click" ,
+            function () {
+                imgURl.src = "img/car1.png";
+            });
+
+
+            buttons[0].addEventListener("click" ,
+            function () {
+                imgURl.src = "img/car7.png";
+                carName.innerHTML = "Corola200";
+                speed.style.width = "30%";
+                petrolCapacity.style.width = "100%";
+                power.style.width = "20%";
+            });
+
+
+
+            buttons[1].addEventListener("click" ,
+            function () {
+                imgURl.src = "img/car5.png";
+                carName.innerHTML = "jeap31";
+                speed.style.width = "68%";
+                petrolCapacity.style.width = "92%";
+                power.style.width = "74%";
+            });
+
+
+            buttons[2].addEventListener("click" ,
+            function () {
+                imgURl.src = "img/car6.png";
+                carName.innerHTML = "jeap32";
+                speed.style.width = "40%";
+                petrolCapacity.style.width = "72%";
+                power.style.width = "100%";
+            });
+
+
+            buttons[3].addEventListener("click" ,
+            function () {
+                imgURl.src = "img/car8.png";
+                
+                carName.innerHTML = "civic 2022";
+                speed.style.width = "100%";
+                petrolCapacity.style.width = "32%";
+                power.style.width = "100%";
+            });
+            
+        }
+    </script>
+</body>
+</html>
