@@ -19,19 +19,23 @@
     align-items: center;
     min-height: 100vh;
 }
-    
-    .container{
+    .main-container{
         max-width: 700px;
         width: 100%;
     background-color: white;
     border-radius: 12px;
     box-shadow: 0px 0px 20px rgb(216 216 218);
-    display: flex;
-    min-height: 300px;
+    margin: 20px;
     padding: 20px;
+    min-height: 300px;
+
+    }
+    .container{
+        
+        width: 100%;
+    display: flex;
     align-items: center;
     flex-wrap: wrap;
-    margin: 20px;
     }
 
     .container .list-div{
@@ -133,8 +137,38 @@
         }
 
     }
-</style> 
+    .theme-toggle-div{
+        width: 100%;
+        display: flex;
+    justify-content: end;
+    }
+    .theme-toggle-div .theme-toggle{
+        width: 43px;
+    border-radius: 15px;
+    border: 1px solid black;
+    display: flex;
+    padding: 4px;
+    justify-content: space-between;
+    }
+    .theme-toggle-div .theme-toggle div{
+        width: 15px;
+    height: 15px;
+    background-color: black;
+    border-radius: 50%;
+    }
+    .theme-toggle-div .theme-toggle .toggle-ball{
+        display: none;
+    }
+    </style> 
 <body>
+   <div class="main-container">
+    <div class="theme-toggle-div">
+        <div class="theme-toggle">
+            <div id="darktheme"></div>
+            <div id="lighttheme"></div>
+            <div class="toggle-ball"></div>
+        </div>
+    </div>
     <div class="container">
         <div class="list-div">
             <button id="car-1" >car 1</button>
@@ -160,6 +194,7 @@
             </div>
         </div>
     </div>
+   </div>
     <script>
         let buttons = document.querySelectorAll(".container .list-div button"),
              imgURl = document.getElementById("car-img"),
@@ -225,5 +260,6 @@
             
         }
     </script>
+    <script src="js/theme.js"></script>
 </body>
 </html>
